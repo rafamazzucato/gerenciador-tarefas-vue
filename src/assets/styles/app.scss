@@ -29,6 +29,9 @@ body{
     align-items: center;
     padding: 0px;
 }
+.container-home{
+    width: 100%;
+}
 
 @import './config.scss';
 @import './login.scss';

@@ -56,16 +56,18 @@ export default {
         
             this.$http
             .post('login', this.body)
-            .then(response => {
-                console.log(response);
+            .then(response => response.json())
+            .then(resultado => {
                 this.labelButton = 'Login';
-                // localStorage.setItem('accessToken', resultado.data.token);
-                // localStorage.setItem('usuarioNome', resultado.data.name);
-                // localStorage.setItem('usuarioEmail', resultado.data.email);
 
-                // this.$emit('token', resultado.data.token);
+                localStorage.setItem('accessToken', resultado.token);
+                localStorage.setItem('usuarioNome', resultado.name);
+                localStorage.setItem('usuarioEmail', resultado.email);
+
+                this.$emit('token', resultado.token);
             })
             .catch(e => {
+                console.log(e);
                 if (e && e.response && e.response.data && e.response.data.erro) {
                     this.msgErro = e.response.data.erro;
                 } else {
