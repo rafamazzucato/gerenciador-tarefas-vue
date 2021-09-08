@@ -1,7 +1,9 @@
 @import './config.scss';
 
 .container-modal{
-    margin-top: 150px;
+    .modal-backdrop{
+        background: transparent;
+    }
 
     button{
         width: 40%;

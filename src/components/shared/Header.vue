@@ -1,7 +1,7 @@
 <template>
     <div class="container-header">
         <img class="logo" src="../../assets/images/logo.svg" alt="Logo Devaria" />
-        <button><span>+</span> Adicionar tarefa</button>
+        <button v-b-modal.modal-adicionar><span>+</span> Adicionar tarefa</button>
         <div class="mobile">
             <span>Olá, {{primeiroNome}}</span>
             <img class="sair" src="../../assets/images/exit.svg" alt="Deslogar" @click="sair" />
